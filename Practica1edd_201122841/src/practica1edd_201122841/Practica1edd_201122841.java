@@ -14,7 +14,7 @@ public class Practica1edd_201122841 {
      */
   
     public static void main(String[] args) {
-       MENU principal = new MENU (); 
+       PRINCIPAL principal = new PRINCIPAL (); 
        principal.show();
     
     }

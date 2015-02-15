@@ -1,20 +1,20 @@
-package practica1edd_201122841;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package practica1edd_201122841;
+
 /**
  *
  * @author Any
  */
-public class MENU extends javax.swing.JFrame {
+public class OTROS_CAMPOSPLANTS extends javax.swing.JFrame {
 
     /**
-     * Creates new form MENU
+     * Creates new form OTROS_CAMPOSPLANTS
      */
-    public MENU() {
+    public OTROS_CAMPOSPLANTS() {
         initComponents();
     }
 
@@ -27,37 +27,23 @@ public class MENU extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Menu");
-        setForeground(java.awt.Color.lightGray);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel1.setText("PLANTAS VS ZOMBIES GUATEMALTECO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        jLabel2.setText("Agregue su texto");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 150, -1));
 
-        jButton1.setText("Jugador Plantas");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 150, -1));
+        jButton1.setText("Aceptar");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
 
-        jButton2.setText("Jugador Zombies");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 150, -1));
-
-        jButton3.setText("Comenzar Juego");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 140, -1));
-
-        jButton4.setText("Eliminar Datos");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 140, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 380));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/first0.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,30 +65,28 @@ public class MENU extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OTROS_CAMPOSPLANTS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OTROS_CAMPOSPLANTS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OTROS_CAMPOSPLANTS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OTROS_CAMPOSPLANTS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MENU().setVisible(true);
+                new OTROS_CAMPOSPLANTS().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
