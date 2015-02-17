@@ -59,6 +59,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI Symbol", 1, 12)); // NOI18N
         jButton2.setText("Jugador Zombies");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, 30));
 
         jButton3.setBackground(new java.awt.Color(255, 51, 51));
@@ -73,7 +78,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 330));
 
-        jMenu1.setText("Archivo");
+        jMenu1.setText("Ver");
 
         jMenuItem2.setText("Catálogo Plantas");
         jMenu1.add(jMenuItem2);
@@ -102,6 +107,12 @@ public class PRINCIPAL extends javax.swing.JFrame {
         
       
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+       ZOMBIES Zombies = new ZOMBIES (); 
+       Zombies.show();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
