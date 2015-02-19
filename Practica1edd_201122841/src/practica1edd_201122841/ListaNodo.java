@@ -21,13 +21,13 @@ public class ListaNodo {
         this.primero = nodo;
         this.ultimo = nodo;
     }
-    public boolean empyte(){
+    public boolean empty(){
         if(primero == null)
             return true;
         return false;
     }
     public void  addFinal(Nodo nuevo){
-        if(empyte()){
+        if(empty()){
             this.primero = nuevo;
             this.ultimo = nuevo;
         }else{
@@ -37,11 +37,11 @@ public class ListaNodo {
         }
     }
     public void  addInicio(Nodo nuevo){
-        if(empyte()){
+        if(empty()){
             this.primero = nuevo;
             this.ultimo = nuevo;
         }else{
-            this.ultimo.anterior= nuevo;
+            this.primero.anterior= nuevo;
             nuevo.siguiente=primero;
             this.primero=nuevo;
         }
@@ -49,7 +49,7 @@ public class ListaNodo {
       //devuelve el primero y lo elimina  
     public Nodo getPrimero(){
         //esta vacia la lista?
-        if(empyte()){
+        if(empty()){
             return null;
         }else{
             //creando un nodo para retornar
@@ -59,6 +59,22 @@ public class ListaNodo {
             primero.anterior=null;
             salida.siguiente= null;
             salida.anterior=null;
+            return salida;
+            
+        }
+    } 
+    public Nodo getUltimo(){
+        //esta vacia la lista?
+        if(empty()){
+            return null;
+        }else{
+            //creando un nodo para retornar
+            Nodo salida;
+            salida=ultimo;
+            ultimo=ultimo.anterior;
+            ultimo.siguiente=null;
+            salida.anterior= null;
+            salida.siguiente=null;
             return salida;
             
         }

@@ -28,6 +28,5 @@ public class Practica1edd_201122841 {
            System.out.println("eliminnando");
            list.Mostrar();
            
-       
     }
 }
