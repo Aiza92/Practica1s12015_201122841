@@ -14,6 +14,8 @@ public class ZOMBIES extends javax.swing.JFrame {
     /**
      * Creates new form ZOMBIES
      */
+    ListaNodo usuario = new ListaNodo();
+
     public ZOMBIES() {
         initComponents();
     }
@@ -30,8 +32,9 @@ public class ZOMBIES extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        NombreZombie = new javax.swing.JTextField();
+        CantidadZombie = new javax.swing.JTextField();
+        AceptarZombies = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -44,7 +47,7 @@ public class ZOMBIES extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -55,10 +58,19 @@ public class ZOMBIES extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cantidad");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 170, -1));
+        getContentPane().add(NombreZombie, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 170, -1));
 
-        jTextField2.setToolTipText("");
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 80, -1));
+        CantidadZombie.setToolTipText("");
+        getContentPane().add(CantidadZombie, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 80, -1));
+
+        AceptarZombies.setForeground(new java.awt.Color(0, 102, 102));
+        AceptarZombies.setText("ACEPTAR");
+        AceptarZombies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AceptarZombiesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(AceptarZombies, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zombies.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, -1));
@@ -68,9 +80,28 @@ public class ZOMBIES extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       OTROS_CAMPOS campozombie = new OTROS_CAMPOS (); 
-       campozombie.show();
+        OTROS_CAMPOS campozombie = new OTROS_CAMPOS();
+        campozombie.show();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void AceptarZombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarZombiesActionPerformed
+        // TODO add your handling code here:
+        if (usuario.Contador() == 0) {
+            usuario.addInicio(new NodoUsuarios(NombreZombie.getText(), Integer.parseInt(CantidadZombie.getText())));
+            System.out.println("Mostrando usuario Zombie");
+            usuario.Mostrar();
+        } else if (usuario.Contador() == 1) {
+            usuario.addInicio(new NodoUsuarios(NombreZombie.getText(), Integer.parseInt(CantidadZombie.getText())));
+            System.out.println("Mostrando usuario Zombie");
+            usuario.Mostrar();
+        } else {
+
+            System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
+        }
+ 
+        this.dispose();
+
+    }//GEN-LAST:event_AceptarZombiesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -108,11 +139,19 @@ public class ZOMBIES extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AceptarZombies;
+    private javax.swing.JTextField CantidadZombie;
+    private javax.swing.JTextField NombreZombie;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+ public void limpiarUsuarios() {
+         Nodo aux = usuario.primero;
+        while (aux != null) {
+            usuario.getPrimero();
+            aux = aux.siguiente;
+        }
+    }
 }

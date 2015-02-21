@@ -20,9 +20,13 @@ public class PRINCIPAL extends javax.swing.JFrame {
     /**
      * Creates new form PRINCIPAL
      */
+    ListaNodo cola = new ListaNodo();
+    ListaNodo pila = new ListaNodo();
+
     public PRINCIPAL() {
         initComponents();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,6 +77,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI Symbol", 1, 12)); // NOI18N
         jButton4.setText("Eliminar Datos");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
@@ -89,6 +98,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Catálogo Zombies");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -104,33 +118,47 @@ public class PRINCIPAL extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    PLANTAS Plantas = new PLANTAS();
+    ZOMBIES Zombies = new ZOMBIES();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jButton1.setEnabled(false);
+        // TODO add your handling code here:
+        Plantas.show();
 
-       // TODO add your handling code here:
-       PLANTAS Plantas = new PLANTAS (); 
-       Plantas.show();
-        
-      
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jButton2.setEnabled(false);
         // TODO add your handling code here:
-       ZOMBIES Zombies = new ZOMBIES (); 
-       Zombies.show();
+        Zombies.show();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        
-        CATALOGO catalogo= new CATALOGO();
+
+        CATALOGO_PLANTAS catalogo = new CATALOGO_PLANTAS();
         catalogo.show();
-        
-        
-        
+
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        //eliminar datos
+        Plantas.limpiarUsuarios();
+        jButton1.setEnabled(true);
+        Zombies.limpiarUsuarios();
+        jButton2.setEnabled(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
-     * @param args the command line arguments
+     * @param args the commandline arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
