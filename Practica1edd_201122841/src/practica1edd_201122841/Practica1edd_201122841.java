@@ -9,10 +9,12 @@ public class Practica1edd_201122841 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       PRINCIPAL principal = new PRINCIPAL (); 
+       PRINCIPAL principal = new PRINCIPAL ();
+        
        principal.show();
        boolean matar = true;
        boolean zombie = false;
+     //probando lista
        ListaNodo list = new ListaNodo(new Nodo("Ejemplo de nombre","Url", matar,zombie, 1, 100));
        System.out.println("inicio");
        list.Mostrar();
@@ -27,6 +29,7 @@ public class Practica1edd_201122841 {
            list.getPrimero();
            System.out.println("eliminnando");
            list.Mostrar();
-           
+   
+     
     }
 }
