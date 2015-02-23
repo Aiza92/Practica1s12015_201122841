@@ -53,22 +53,31 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         AceptarCatalogo1 = new javax.swing.JButton();
         AceptarCatalogo2 = new javax.swing.JButton();
         ListoP = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Catalogo Plantas");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Imagen");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 31, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Nombre");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
         jLabel4.setText("Tipo Ataque");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
-        getContentPane().add(Nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 63, -1));
-        getContentPane().add(Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 63, -1));
-        getContentPane().add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 63, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        getContentPane().add(Nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 63, -1));
+        getContentPane().add(Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 63, -1));
+        getContentPane().add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 63, -1));
 
         AceptarCatalogo.setText("ACEPTAR");
         AceptarCatalogo.addActionListener(new java.awt.event.ActionListener() {
@@ -76,40 +85,43 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
                 AceptarCatalogoActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 163, -1, 30));
+        getContentPane().add(AceptarCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, 20));
 
-        Label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Golpeador.jpg"))); // NOI18N
+        Label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/golpeador.png"))); // NOI18N
         Label1.setText("jLabel1");
-        getContentPane().add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 50, 30));
+        getContentPane().add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 50, 70));
 
         Label2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LanzaCocos.jpg"))); // NOI18N
         Label2.setText("jLabel2");
-        getContentPane().add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 50, 30));
+        getContentPane().add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, 70));
 
         Label3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lanzador.jpg"))); // NOI18N
-        Label3.setText("jLabel3");
-        getContentPane().add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 60, 30));
+        getContentPane().add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 50, 70));
 
         CAtaque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
-        getContentPane().add(CAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        getContentPane().add(CAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setText("Defensa");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
-        getContentPane().add(Defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 70, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
+        getContentPane().add(Defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 70, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Ataque");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
-        getContentPane().add(Ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 70, -1));
-        getContentPane().add(Defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 70, -1));
-        getContentPane().add(Ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 70, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
+        getContentPane().add(Ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 70, -1));
+        getContentPane().add(Defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 70, -1));
+        getContentPane().add(Ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 70, -1));
 
         CAtaque1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
-        getContentPane().add(CAtaque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
-        getContentPane().add(Defensa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 70, -1));
-        getContentPane().add(Ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 70, -1));
+        getContentPane().add(CAtaque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
+        getContentPane().add(Defensa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 70, -1));
+        getContentPane().add(Ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 70, -1));
 
         CAtaque2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
-        getContentPane().add(CAtaque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        getContentPane().add(CAtaque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
 
         AceptarCatalogo1.setText("ACEPTAR");
         AceptarCatalogo1.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +129,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
                 AceptarCatalogo1ActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarCatalogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, -1, -1));
+        getContentPane().add(AceptarCatalogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
 
         AceptarCatalogo2.setText("ACEPTAR");
         AceptarCatalogo2.addActionListener(new java.awt.event.ActionListener() {
@@ -125,15 +137,21 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
                 AceptarCatalogo2ActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarCatalogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, -1, -1));
+        getContentPane().add(AceptarCatalogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, -1, -1));
 
-        ListoP.setText("LISTO");
+        ListoP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/aceptar.png"))); // NOI18N
         ListoP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListoPActionPerformed(evt);
             }
         });
-        getContentPane().add(ListoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 110, 30));
+        getContentPane().add(ListoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 120, 120));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/negro.png"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 250));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FICHATECNICA.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 252, 710, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -262,6 +280,8 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
