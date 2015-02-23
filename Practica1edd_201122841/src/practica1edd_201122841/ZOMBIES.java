@@ -14,7 +14,7 @@ public class ZOMBIES extends javax.swing.JFrame {
     /**
      * Creates new form ZOMBIES
      */
-    ListaNodo usuario = new ListaNodo();
+//static  ListaNodo usuario = new ListaNodo();
 
     public ZOMBIES() {
         initComponents();
@@ -86,19 +86,21 @@ public class ZOMBIES extends javax.swing.JFrame {
 
     private void AceptarZombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarZombiesActionPerformed
         // TODO add your handling code here:
-        if (usuario.Contador() == 0) {
-            usuario.addInicio(new NodoUsuarios(NombreZombie.getText(), Integer.parseInt(CantidadZombie.getText())));
+        if (TABLERO.usuarios.Contador() == 0) {
+           TABLERO.usuarios.addInicio(new NodoUsuarios(NombreZombie.getText(), Integer.parseInt(CantidadZombie.getText())));
             System.out.println("Mostrando usuario Zombie");
-            usuario.Mostrar();
-        } else if (usuario.Contador() == 1) {
-            usuario.addInicio(new NodoUsuarios(NombreZombie.getText(), Integer.parseInt(CantidadZombie.getText())));
+            TABLERO.usuarios.Mostrar();
+        } else if (TABLERO.usuarios.Contador() == 1) {
+            TABLERO.usuarios.addInicio(new NodoUsuarios(NombreZombie.getText(), Integer.parseInt(CantidadZombie.getText())));
             System.out.println("Mostrando usuario Zombie");
-            usuario.Mostrar();
+            TABLERO.usuarios.Mostrar();
         } else {
 
             System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
         }
- 
+        PRINCIPAL.Zombie=true;
+        
+        ((HiloCatalogo) new HiloCatalogo()).start();
         this.dispose();
 
     }//GEN-LAST:event_AceptarZombiesActionPerformed
@@ -148,9 +150,9 @@ public class ZOMBIES extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
  public void limpiarUsuarios() {
-         Nodo aux = usuario.primero;
+         Nodo aux = TABLERO.usuarios.primero;
         while (aux != null) {
-            usuario.getPrimero();
+            TABLERO.usuarios.getPrimero();
             aux = aux.siguiente;
         }
     }

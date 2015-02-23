@@ -14,7 +14,7 @@ public class PLANTAS extends javax.swing.JFrame {
     /**
      * Creates new form PLANTAS
      */
-    ListaNodo usuario = new ListaNodo();
+   // ListaNodo usuario = new ListaNodo();
 
     public PLANTAS() {
         initComponents();
@@ -85,16 +85,16 @@ public class PLANTAS extends javax.swing.JFrame {
     }//GEN-LAST:event_otroplantaActionPerformed
 
     private void AceptarPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarPlantasActionPerformed
-        // TODO add your handling code here:
+        // TODOqqqq add your handling code here:
 
-        if (usuario.Contador() == 0) {
-            usuario.addInicio(new NodoUsuarios(NombrePlanta.getText(), Integer.parseInt(CantidadPlanta.getText())));
+        if (TABLERO.usuarios.Contador() == 0) {
+            TABLERO.usuarios.addInicio(new NodoUsuarios(NombrePlanta.getText(), Integer.parseInt(CantidadPlanta.getText())));
             System.out.println("Mostrando usuario planta");
-            usuario.Mostrar();
-        } else if (usuario.Contador() == 1) {
-            usuario.addInicio(new NodoUsuarios(NombrePlanta.getText(), Integer.parseInt(CantidadPlanta.getText())));
+            TABLERO.usuarios.Mostrar();
+        } else if (TABLERO.usuarios.Contador() == 1) {
+            TABLERO.usuarios.addInicio(new NodoUsuarios(NombrePlanta.getText(), Integer.parseInt(CantidadPlanta.getText())));
             System.out.println("Mostrando usuario planta");
-            usuario.Mostrar();
+            TABLERO.usuarios.Mostrar();
         }else{
         
             System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
@@ -102,7 +102,8 @@ public class PLANTAS extends javax.swing.JFrame {
         
         //escondiendo el boton para ya no usarlo y no crear mas usuarios
         
-        
+        PRINCIPAL.Planta=true;
+        ((HiloCatalogo) new HiloCatalogo()).start();
         this.dispose();
         
     }//GEN-LAST:event_AceptarPlantasActionPerformed
@@ -153,9 +154,9 @@ public class PLANTAS extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void limpiarUsuarios() {
-         Nodo aux = usuario.primero;
+         Nodo aux = TABLERO.usuarios.primero;
         while (aux != null) {
-            usuario.getPrimero();
+            TABLERO.usuarios.getPrimero();
             aux = aux.siguiente;
         }
     }

@@ -15,7 +15,7 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
      * Creates new form CATALOGO_ZOMBIES
      */
     ListaNodo pila = new ListaNodo();
-        
+
     public CATALOGO_ZOMBIES() {
         initComponents();
     }
@@ -52,8 +52,10 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
         CAtaque2 = new javax.swing.JComboBox();
         AceptarCatalogo1 = new javax.swing.JButton();
         AceptarCatalogo2 = new javax.swing.JButton();
+        ListoZ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Catalogo Zombies");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Imagen");
@@ -64,9 +66,9 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
 
         jLabel4.setText("Tipo Ataque");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
-        getContentPane().add(Nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 63, -1));
-        getContentPane().add(Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 63, -1));
-        getContentPane().add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 63, -1));
+        getContentPane().add(Nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 63, -1));
+        getContentPane().add(Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 63, -1));
+        getContentPane().add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 63, -1));
 
         AceptarCatalogo3.setText("ACEPTAR");
         AceptarCatalogo3.addActionListener(new java.awt.event.ActionListener() {
@@ -74,40 +76,45 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
                 AceptarCatalogo3ActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarCatalogo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, -1, 20));
+        getContentPane().add(AceptarCatalogo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, -1, 20));
 
-        Label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Golpeador.jpg"))); // NOI18N
+        Label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/golpeador.png"))); // NOI18N
         Label1.setText("jLabel1");
-        getContentPane().add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 50, 30));
+        getContentPane().add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 50, 70));
 
         Label2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LanzaCocos.jpg"))); // NOI18N
         Label2.setText("jLabel2");
-        getContentPane().add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 50, 30));
+        getContentPane().add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, 70));
 
         Label3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lanzador.jpg"))); // NOI18N
         Label3.setText("jLabel3");
-        getContentPane().add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 60, 30));
+        getContentPane().add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 50, 70));
 
-        CAtaque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(CAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        CAtaque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
+        CAtaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CAtaqueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
 
         jLabel6.setText("Defensa");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
-        getContentPane().add(Defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 70, -1));
+        getContentPane().add(Defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 70, -1));
 
         jLabel3.setText("Ataque");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
-        getContentPane().add(Ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 70, -1));
-        getContentPane().add(Defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 70, -1));
-        getContentPane().add(Ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 70, -1));
+        getContentPane().add(Ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 70, -1));
+        getContentPane().add(Defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 70, -1));
+        getContentPane().add(Ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 70, -1));
 
-        CAtaque1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(CAtaque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
-        getContentPane().add(Defensa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 70, -1));
-        getContentPane().add(Ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 70, -1));
+        CAtaque1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
+        getContentPane().add(CAtaque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
+        getContentPane().add(Defensa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 70, -1));
+        getContentPane().add(Ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 70, -1));
 
-        CAtaque2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(CAtaque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        CAtaque2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
+        getContentPane().add(CAtaque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
         AceptarCatalogo1.setText("ACEPTAR");
         AceptarCatalogo1.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +122,7 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
                 AceptarCatalogo1ActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarCatalogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
+        getContentPane().add(AceptarCatalogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, -1, -1));
 
         AceptarCatalogo2.setText("ACEPTAR");
         AceptarCatalogo2.addActionListener(new java.awt.event.ActionListener() {
@@ -123,22 +130,36 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
                 AceptarCatalogo2ActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarCatalogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, -1, -1));
+        getContentPane().add(AceptarCatalogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, -1));
+
+        ListoZ.setText("LISTO");
+        ListoZ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListoZActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ListoZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 100, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarCatalogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo3ActionPerformed
         // TODO add your handling code here:
-
-        String Nombre,Imagen;
+   String categoria1 = (String) CAtaque1.getSelectedItem();
+        boolean tipo;
+        if (categoria1=="Disparo") {
+            tipo=true;
+        }else{
+        tipo=false;
+        }
+        
+        String Nombre, Imagen;
         boolean TipoAtaque;
-        int Ataque,Defensa;
+        int Ataque, Defensa;
 
-        CATALOGO_ZOMBIES catalogo =new CATALOGO_ZOMBIES();
+        CATALOGO_ZOMBIES catalogo = new CATALOGO_ZOMBIES();
 
-        pila.addInicio(new Nodo(Label3.getText(),Nombre3.getText(),true,Integer.parseInt(Defensa3.getText()),Integer.parseInt(Ataque3.getText())));
-
+        pila.addInicio(new Nodo(Label3.getText(), Nombre3.getText(), true, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
         System.out.println("Mostrando datos3");
         pila.Mostrar();
 
@@ -146,19 +167,42 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
 
     private void AceptarCatalogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo1ActionPerformed
         // TODO add your handling code here:
-
-        pila.addInicio(new Nodo(Label1.getText(),Nombre1.getText(),true,Integer.parseInt(Defensa1.getText()),Integer.parseInt(Ataque1.getText())));
+        String categoria1 = (String) CAtaque.getSelectedItem();
+        boolean tipo;
+        if (categoria1=="Disparo") {
+            tipo=true;
+        }else{
+        tipo=false;
+        }
+        
+        pila.addInicio(new Nodo(Label1.getText(), Nombre1.getText(), tipo, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
         System.out.println("Mostrando datos1");
         pila.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo1ActionPerformed
 
     private void AceptarCatalogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo2ActionPerformed
         // TODO add your handling code here:
-
-        pila.addInicio(new Nodo(Label2.getText(),Nombre2.getText(),true,Integer.parseInt(Defensa2.getText()),Integer.parseInt(Ataque2.getText())));
+   String categoria1 = (String) CAtaque2.getSelectedItem();
+        boolean tipo;
+        if (categoria1=="Disparo") {
+            tipo=true;
+        }else{
+        tipo=false;
+        }
+        pila.addInicio(new Nodo(Label2.getText(), Nombre2.getText(), tipo, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
         System.out.println("Mostrando datos2");
         pila.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo2ActionPerformed
+
+    private void ListoZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoZActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+
+    }//GEN-LAST:event_ListoZActionPerformed
+
+    private void CAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CAtaqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CAtaqueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,6 +255,7 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
     private javax.swing.JLabel Label1;
     private javax.swing.JLabel Label2;
     private javax.swing.JLabel Label3;
+    private javax.swing.JButton ListoZ;
     public javax.swing.JTextField Nombre1;
     public javax.swing.JTextField Nombre2;
     public javax.swing.JTextField Nombre3;

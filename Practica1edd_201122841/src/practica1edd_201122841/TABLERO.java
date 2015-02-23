@@ -14,8 +14,10 @@ public class TABLERO extends javax.swing.JFrame {
     /**
      * Creates new form TABLERO
      */
+    static ListaNodo usuarios = new ListaNodo();
+
     public TABLERO() {
-        
+
         initComponents();
     }
 
@@ -64,7 +66,7 @@ public class TABLERO extends javax.swing.JFrame {
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(TABLERO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-   
+
         }
         //</editor-fold>
 

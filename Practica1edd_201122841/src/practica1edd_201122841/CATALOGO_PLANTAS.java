@@ -15,7 +15,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
      * Creates new form CATALOGO_PLANTAS
      */
     ListaNodo cola = new ListaNodo();
-        
+
     public CATALOGO_PLANTAS() {
         initComponents();
     }
@@ -52,9 +52,10 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         CAtaque2 = new javax.swing.JComboBox();
         AceptarCatalogo1 = new javax.swing.JButton();
         AceptarCatalogo2 = new javax.swing.JButton();
+        ListoP = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Catalogo");
+        setTitle("Catalogo Plantas");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Imagen");
@@ -89,7 +90,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         Label3.setText("jLabel3");
         getContentPane().add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 60, 30));
 
-        CAtaque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CAtaque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
         getContentPane().add(CAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
 
         jLabel6.setText("Defensa");
@@ -102,12 +103,12 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         getContentPane().add(Defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 70, -1));
         getContentPane().add(Ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 70, -1));
 
-        CAtaque1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CAtaque1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
         getContentPane().add(CAtaque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
         getContentPane().add(Defensa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 70, -1));
         getContentPane().add(Ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 70, -1));
 
-        CAtaque2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CAtaque2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
         getContentPane().add(CAtaque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
 
         AceptarCatalogo1.setText("ACEPTAR");
@@ -126,41 +127,59 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         });
         getContentPane().add(AceptarCatalogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, -1, -1));
 
+        ListoP.setText("LISTO");
+        ListoP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListoPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ListoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 110, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogoActionPerformed
         // TODO add your handling code here:
-                   
-   String Nombre,Imagen;
-   boolean TipoAtaque;
-   int Ataque,Defensa;
-   
-   CATALOGO_PLANTAS catalogo =new CATALOGO_PLANTAS();
-   
-   cola.addFinal(new Nodo(Label3.getText(),Nombre3.getText(),true,Integer.parseInt(Defensa3.getText()),Integer.parseInt(Ataque3.getText())));
-   
-   System.out.println("Mostrando datos3");
-   cola.Mostrar();
-        
-        
+
+        String Nombre, Imagen;
+        boolean TipoAtaque;
+        int Ataque, Defensa;
+
+        CATALOGO_PLANTAS catalogo = new CATALOGO_PLANTAS();
+
+        cola.addFinal(new Nodo(Label3.getText(), Nombre3.getText(), true, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
+
+        System.out.println("Mostrando datos3");
+        cola.Mostrar();
+
+
     }//GEN-LAST:event_AceptarCatalogoActionPerformed
 
     private void AceptarCatalogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo1ActionPerformed
         // TODO add your handling code here:
-   
-       cola.addFinal(new Nodo(Label1.getText(),Nombre1.getText(),true,Integer.parseInt(Defensa1.getText()),Integer.parseInt(Ataque1.getText())));
-       System.out.println("Mostrando datos1");
-       cola.Mostrar();
+
+        cola.addFinal(new Nodo(Label1.getText(), Nombre1.getText(), true, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
+        System.out.println("Mostrando datos1");
+        cola.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo1ActionPerformed
 
     private void AceptarCatalogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo2ActionPerformed
         // TODO add your handling code here:
 
-        cola.addFinal(new Nodo(Label2.getText(),Nombre2.getText(),true,Integer.parseInt(Defensa2.getText()),Integer.parseInt(Ataque2.getText())));
-       System.out.println("Mostrando datos2");
+        cola.addFinal(new Nodo(Label2.getText(), Nombre2.getText(), true, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
+        System.out.println("Mostrando datos2");
         cola.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo2ActionPerformed
+
+    private void ListoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoPActionPerformed
+        // TODO add your handling code here:
+        CATALOGO_ZOMBIES catZ = new CATALOGO_ZOMBIES();
+        catZ.show();
+        this.dispose(); 
+        ((HiloCatalogo) new HiloCatalogo()).stop();
+
+
+    }//GEN-LAST:event_ListoPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,6 +233,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
     private javax.swing.JLabel Label1;
     private javax.swing.JLabel Label2;
     private javax.swing.JLabel Label3;
+    private javax.swing.JButton ListoP;
     public javax.swing.JTextField Nombre1;
     public javax.swing.JTextField Nombre2;
     public javax.swing.JTextField Nombre3;

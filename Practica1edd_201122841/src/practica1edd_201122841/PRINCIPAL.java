@@ -22,6 +22,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
      */
     ListaNodo cola = new ListaNodo();
     ListaNodo pila = new ListaNodo();
+   static boolean Planta, Zombie;
 
     public PRINCIPAL() {
         initComponents();
@@ -124,15 +125,19 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jButton1.setEnabled(false);
         // TODO add your handling code here:
         Plantas.show();
+        //variable para hacer  los catalogos
+                ((HiloCatalogo) new HiloCatalogo()).start();
+
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jButton2.setEnabled(false);
         // TODO add your handling code here:
         Zombies.show();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -160,7 +165,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
     /**
      * @param args the commandline arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])  {
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -188,6 +194,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PRINCIPAL().setVisible(true);
+                
             }
         });
     }
