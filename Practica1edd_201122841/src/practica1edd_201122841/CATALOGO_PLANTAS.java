@@ -140,14 +140,21 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
 
     private void AceptarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogoActionPerformed
         // TODO add your handling code here:
-
+ String categoria3 = (String) CAtaque1.getSelectedItem();
+        boolean tipo;
+        if (categoria3=="Disparo") {
+            tipo=true;
+        }else{
+        tipo=false;
+        }
+        
         String Nombre, Imagen;
         boolean TipoAtaque;
         int Ataque, Defensa;
 
         CATALOGO_PLANTAS catalogo = new CATALOGO_PLANTAS();
 
-        cola.addFinal(new Nodo(Label3.getText(), Nombre3.getText(), true, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
+        cola.addFinal(new Nodo(Label3.getText(), Nombre3.getText(), tipo, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
 
         System.out.println("Mostrando datos3");
         cola.Mostrar();
@@ -157,16 +164,30 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
 
     private void AceptarCatalogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo1ActionPerformed
         // TODO add your handling code here:
+        String categoria1 = (String) CAtaque.getSelectedItem();
+        boolean tipo;
+        if (categoria1 == "Disparo") {
+            tipo = true;
+        } else {
+            tipo = false;
+        }
 
-        cola.addFinal(new Nodo(Label1.getText(), Nombre1.getText(), true, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
+        cola.addFinal(new Nodo(Label1.getText(), Nombre1.getText(), tipo, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
         System.out.println("Mostrando datos1");
         cola.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo1ActionPerformed
 
     private void AceptarCatalogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo2ActionPerformed
         // TODO add your handling code here:
-
-        cola.addFinal(new Nodo(Label2.getText(), Nombre2.getText(), true, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
+ String categoria2 = (String) CAtaque2.getSelectedItem();
+        boolean tipo;
+        if (categoria2=="Disparo") {
+            tipo=true;
+        }else{
+        tipo=false;
+        }
+        
+        cola.addFinal(new Nodo(Label2.getText(), Nombre2.getText(), tipo, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
         System.out.println("Mostrando datos2");
         cola.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo2ActionPerformed
@@ -175,7 +196,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         // TODO add your handling code here:
         CATALOGO_ZOMBIES catZ = new CATALOGO_ZOMBIES();
         catZ.show();
-        this.dispose(); 
+        this.dispose();
         ((HiloCatalogo) new HiloCatalogo()).stop();
 
 

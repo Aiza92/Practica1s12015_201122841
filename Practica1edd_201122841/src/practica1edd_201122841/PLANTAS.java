@@ -70,7 +70,7 @@ public class PLANTAS extends javax.swing.JFrame {
                 AceptarPlantasActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarPlantas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 80, -1));
+        getContentPane().add(AceptarPlantas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 100, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plantas.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 320));

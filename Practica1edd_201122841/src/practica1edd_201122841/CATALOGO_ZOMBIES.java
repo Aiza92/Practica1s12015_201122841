@@ -145,9 +145,9 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
 
     private void AceptarCatalogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo3ActionPerformed
         // TODO add your handling code here:
-   String categoria1 = (String) CAtaque1.getSelectedItem();
+   String categoria3 = (String) CAtaque1.getSelectedItem();
         boolean tipo;
-        if (categoria1=="Disparo") {
+        if (categoria3=="Disparo") {
             tipo=true;
         }else{
         tipo=false;
@@ -182,9 +182,9 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
 
     private void AceptarCatalogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo2ActionPerformed
         // TODO add your handling code here:
-   String categoria1 = (String) CAtaque2.getSelectedItem();
+   String categoria2 = (String) CAtaque2.getSelectedItem();
         boolean tipo;
-        if (categoria1=="Disparo") {
+        if (categoria2=="Disparo") {
             tipo=true;
         }else{
         tipo=false;

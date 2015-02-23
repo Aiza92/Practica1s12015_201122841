@@ -70,7 +70,7 @@ public class ZOMBIES extends javax.swing.JFrame {
                 AceptarZombiesActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarZombies, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+        getContentPane().add(AceptarZombies, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 180, 90, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zombies.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, -1));

@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +23,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
      */
     ListaNodo cola = new ListaNodo();
     ListaNodo pila = new ListaNodo();
-   static boolean Planta, Zombie;
+    static boolean Planta, Zombie;
+    public int filas, columnas;
 
     public PRINCIPAL() {
         initComponents();
@@ -43,9 +45,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -74,7 +73,12 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(255, 51, 51));
         jButton3.setFont(new java.awt.Font("Segoe UI Symbol", 1, 12)); // NOI18N
         jButton3.setText("Comenzar Juego");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, 50));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, 50));
 
         jButton4.setFont(new java.awt.Font("Segoe UI Symbol", 1, 12)); // NOI18N
         jButton4.setText("Eliminar Datos");
@@ -87,26 +91,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 330));
-
-        jMenu1.setText("Ver");
-
-        jMenuItem2.setText("Catálogo Plantas");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem3.setText("Catálogo Zombies");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Reportes");
         jMenuBar1.add(jMenu2);
@@ -126,8 +110,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         // TODO add your handling code here:
         Plantas.show();
         //variable para hacer  los catalogos
-                ((HiloCatalogo) new HiloCatalogo()).start();
-
+        ((HiloCatalogo) new HiloCatalogo()).start();
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -137,21 +120,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jButton2.setEnabled(false);
         // TODO add your handling code here:
         Zombies.show();
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-
-        CATALOGO_PLANTAS catalogo = new CATALOGO_PLANTAS();
-        catalogo.show();
-
-
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -162,10 +132,26 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jButton2.setEnabled(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    /**
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+
+        filas = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Que dimension de filas desea en el tablero?"));
+
+        columnas = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Que dimension de columnas desea en el tablero?"));
+        System.out.println("las filas son:"+ filas + "columnas" + columnas);
+        
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                TABLERO.mat.AgregarMatriz(i, j);
+            }
+        }
+         TABLERO.mat.recorrer();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    /*
      * @param args the commandline arguments
      */
-    public static void main(String args[])  {
+    public static void main(String args[]) {
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -194,7 +180,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PRINCIPAL().setVisible(true);
-                
+
             }
         });
     }
@@ -205,11 +191,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }

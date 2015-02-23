@@ -15,6 +15,7 @@ public class TABLERO extends javax.swing.JFrame {
      * Creates new form TABLERO
      */
     static ListaNodo usuarios = new ListaNodo();
+    static Matriz mat = new Matriz();
 
     public TABLERO() {
 
