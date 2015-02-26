@@ -121,33 +121,31 @@
     <Component class="javax.swing.JLabel" name="Label1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/golpeador.png"/>
+          <Image iconType="3" name="/Imagenes/lanzacocos.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="40" width="50" height="70"/>
+          <AbsoluteConstraints x="30" y="20" width="50" height="70"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="Label2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/LanzaCocos.jpg"/>
+          <Image iconType="3" name="/Imagenes/planta.jpg"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="110" width="50" height="70"/>
+          <AbsoluteConstraints x="30" y="100" width="50" height="70"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="Label3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/Lanzador.jpg"/>
+          <Image iconType="3" name="/Imagenes/golpeador.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -319,7 +317,7 @@
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/negro.png"/>
+          <Image iconType="3" name="/Imagenes/blanco.png"/>
         </Property>
       </Properties>
       <Constraints>

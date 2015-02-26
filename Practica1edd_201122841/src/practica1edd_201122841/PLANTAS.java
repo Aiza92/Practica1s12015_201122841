@@ -14,8 +14,7 @@ public class PLANTAS extends javax.swing.JFrame {
     /**
      * Creates new form PLANTAS
      */
-   // ListaNodo usuario = new ListaNodo();
-
+    // ListaNodo usuario = new ListaNodo();
     public PLANTAS() {
         initComponents();
     }
@@ -35,6 +34,7 @@ public class PLANTAS extends javax.swing.JFrame {
         NombrePlanta = new javax.swing.JTextField();
         CantidadPlanta = new javax.swing.JTextField();
         AceptarPlantas = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -59,18 +59,26 @@ public class PLANTAS extends javax.swing.JFrame {
                 otroplantaActionPerformed(evt);
             }
         });
-        getContentPane().add(otroplanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+        getContentPane().add(otroplanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, -1));
         getContentPane().add(NombrePlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 200, -1));
         getContentPane().add(CantidadPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 90, -1));
 
         AceptarPlantas.setForeground(new java.awt.Color(0, 51, 51));
-        AceptarPlantas.setText("ACEPTAR");
+        AceptarPlantas.setText("FINALIZAR");
         AceptarPlantas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarPlantasActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarPlantas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 100, -1));
+        getContentPane().add(AceptarPlantas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 100, -1));
+
+        jButton1.setText("Crear usuario");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 130, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plantas.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 320));
@@ -81,12 +89,25 @@ public class PLANTAS extends javax.swing.JFrame {
     private void otroplantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otroplantaActionPerformed
         // TODO add your handling code here:
         OTROS_CAMPOSPLANTS campoplanta = new OTROS_CAMPOSPLANTS();
+        
         campoplanta.show();
     }//GEN-LAST:event_otroplantaActionPerformed
 
     private void AceptarPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarPlantasActionPerformed
         // TODOqqqq add your handling code here:
 
+   
+        jButton1.setEnabled(true);
+        otroplanta.setEnabled(false);
+        //escondiendo el boton para ya no usarlo y no crear mas usuarios
+        PRINCIPAL.Planta = true;
+        ((HiloCatalogo) new HiloCatalogo()).start();
+        this.dispose();
+
+    }//GEN-LAST:event_AceptarPlantasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         if (TABLERO.usuarios.Contador() == 0) {
             TABLERO.usuarios.addInicio(new NodoUsuarios(NombrePlanta.getText(), Integer.parseInt(CantidadPlanta.getText())));
             System.out.println("Mostrando usuario planta");
@@ -95,18 +116,13 @@ public class PLANTAS extends javax.swing.JFrame {
             TABLERO.usuarios.addInicio(new NodoUsuarios(NombrePlanta.getText(), Integer.parseInt(CantidadPlanta.getText())));
             System.out.println("Mostrando usuario planta");
             TABLERO.usuarios.Mostrar();
-        }else{
-        
+        } else {
+            
             System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
         }
-        
-        //escondiendo el boton para ya no usarlo y no crear mas usuarios
-        
-        PRINCIPAL.Planta=true;
-        ((HiloCatalogo) new HiloCatalogo()).start();
-        this.dispose();
-        
-    }//GEN-LAST:event_AceptarPlantasActionPerformed
+        jButton1.setEnabled(false);
+        otroplanta.setEnabled(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +163,7 @@ public class PLANTAS extends javax.swing.JFrame {
     private javax.swing.JButton AceptarPlantas;
     private javax.swing.JTextField CantidadPlanta;
     private javax.swing.JTextField NombrePlanta;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -154,7 +171,7 @@ public class PLANTAS extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void limpiarUsuarios() {
-         Nodo aux = TABLERO.usuarios.primero;
+        Nodo aux = TABLERO.usuarios.primero;
         while (aux != null) {
             TABLERO.usuarios.getPrimero();
             aux = aux.siguiente;

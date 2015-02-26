@@ -35,6 +35,7 @@ public class ZOMBIES extends javax.swing.JFrame {
         NombreZombie = new javax.swing.JTextField();
         CantidadZombie = new javax.swing.JTextField();
         AceptarZombies = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -47,7 +48,7 @@ public class ZOMBIES extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,13 +65,21 @@ public class ZOMBIES extends javax.swing.JFrame {
         getContentPane().add(CantidadZombie, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 80, -1));
 
         AceptarZombies.setForeground(new java.awt.Color(0, 102, 102));
-        AceptarZombies.setText("ACEPTAR");
+        AceptarZombies.setText("Crear Usuario");
         AceptarZombies.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarZombiesActionPerformed(evt);
             }
         });
-        getContentPane().add(AceptarZombies, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 180, 90, -1));
+        getContentPane().add(AceptarZombies, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 150, -1));
+
+        jButton2.setText("FINALIZAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zombies.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, -1));
@@ -86,6 +95,7 @@ public class ZOMBIES extends javax.swing.JFrame {
 
     private void AceptarZombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarZombiesActionPerformed
         // TODO add your handling code here:
+    
         if (TABLERO.usuarios.Contador() == 0) {
            TABLERO.usuarios.addInicio(new NodoUsuarios(NombreZombie.getText(), Integer.parseInt(CantidadZombie.getText())));
             System.out.println("Mostrando usuario Zombie");
@@ -98,12 +108,27 @@ public class ZOMBIES extends javax.swing.JFrame {
 
             System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
         }
+         AceptarZombies.setEnabled(false);
+        jButton1.setEnabled(true);
+//        PRINCIPAL.Zombie=true;
+//        
+//        ((HiloCatalogo) new HiloCatalogo()).start();
+//        this.dispose();
+
+    }//GEN-LAST:event_AceptarZombiesActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+        AceptarZombies.setEnabled(true);
+        jButton1.setEnabled(false);
+        
         PRINCIPAL.Zombie=true;
         
         ((HiloCatalogo) new HiloCatalogo()).start();
         this.dispose();
 
-    }//GEN-LAST:event_AceptarZombiesActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,6 +170,7 @@ public class ZOMBIES extends javax.swing.JFrame {
     private javax.swing.JTextField CantidadZombie;
     private javax.swing.JTextField NombreZombie;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

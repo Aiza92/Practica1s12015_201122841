@@ -15,8 +15,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
      * Creates new form CATALOGO_PLANTAS
      */
     ListaNodo cola = new ListaNodo();
-
-    public CATALOGO_PLANTAS() {
+      public CATALOGO_PLANTAS() {
         initComponents();
     }
 
@@ -87,15 +86,13 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         });
         getContentPane().add(AceptarCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, 20));
 
-        Label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/golpeador.png"))); // NOI18N
-        Label1.setText("jLabel1");
-        getContentPane().add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 50, 70));
+        Label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lanzacocos.png"))); // NOI18N
+        getContentPane().add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, 70));
 
-        Label2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LanzaCocos.jpg"))); // NOI18N
-        Label2.setText("jLabel2");
-        getContentPane().add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, 70));
+        Label2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/planta.jpg"))); // NOI18N
+        getContentPane().add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 50, 70));
 
-        Label3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lanzador.jpg"))); // NOI18N
+        Label3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/golpeador.png"))); // NOI18N
         getContentPane().add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 50, 70));
 
         CAtaque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disparo", "Ataque" }));
@@ -147,7 +144,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
         });
         getContentPane().add(ListoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 120, 120));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/negro.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/blanco.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 250));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FICHATECNICA.png"))); // NOI18N
@@ -158,14 +155,14 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
 
     private void AceptarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogoActionPerformed
         // TODO add your handling code here:
- String categoria3 = (String) CAtaque1.getSelectedItem();
+        String categoria3 = (String) CAtaque1.getSelectedItem();
         boolean tipo;
-        if (categoria3=="Disparo") {
-            tipo=true;
-        }else{
-        tipo=false;
+        if (categoria3 == "Disparo") {
+            tipo = true;
+        } else {
+            tipo = false;
         }
-        
+
         String Nombre, Imagen;
         boolean TipoAtaque;
         int Ataque, Defensa;
@@ -197,14 +194,14 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
 
     private void AceptarCatalogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo2ActionPerformed
         // TODO add your handling code here:
- String categoria2 = (String) CAtaque2.getSelectedItem();
+        String categoria2 = (String) CAtaque2.getSelectedItem();
         boolean tipo;
-        if (categoria2=="Disparo") {
-            tipo=true;
-        }else{
-        tipo=false;
+        if (categoria2 == "Disparo") {
+            tipo = true;
+        } else {
+            tipo = false;
         }
-        
+
         cola.addFinal(new Nodo(Label2.getText(), Nombre2.getText(), tipo, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
         System.out.println("Mostrando datos2");
         cola.Mostrar();

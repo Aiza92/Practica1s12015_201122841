@@ -43,6 +43,11 @@ public class OTROS_CAMPOSPLANTS extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 150, -1));
 
         jButton1.setText("Aceptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/first0.jpg"))); // NOI18N
@@ -50,6 +55,18 @@ public class OTROS_CAMPOSPLANTS extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (TABLERO.usuarios.Contador() == 1) {
+            ((NodoUsuarios)TABLERO.usuarios.primero).OtrosCampos.addFinal(new OtrosCampos(jTextField1.getText()));
+        } else if (TABLERO.usuarios.Contador() == 2) {
+            ((NodoUsuarios)TABLERO.usuarios.primero.siguiente).OtrosCampos.addFinal(new OtrosCampos(jTextField1.getText()));
+        }else{
+            System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
+        }  
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

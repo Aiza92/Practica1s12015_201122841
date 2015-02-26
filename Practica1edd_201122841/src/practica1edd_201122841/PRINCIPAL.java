@@ -21,8 +21,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
     /**
      * Creates new form PRINCIPAL
      */
-    ListaNodo cola = new ListaNodo();
-    ListaNodo pila = new ListaNodo();
+    //ListaNodo cola = new ListaNodo();
+    //ListaNodo pila = new ListaNodo();
     static boolean Planta, Zombie;
     public int filas, columnas;
 
@@ -43,6 +43,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -87,7 +88,15 @@ public class PRINCIPAL extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+
+        jButton5.setText("REPORTES");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 330));
@@ -138,15 +147,19 @@ public class PRINCIPAL extends javax.swing.JFrame {
         filas = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Que dimension de filas desea en el tablero?"));
 
         columnas = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Que dimension de columnas desea en el tablero?"));
-        System.out.println("las filas son:"+ filas + "columnas" + columnas);
-        
+        System.out.println("las filas son:" + filas + "columnas" + columnas);
+
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 TABLERO.mat.AgregarMatriz(i, j);
             }
         }
-         TABLERO.mat.recorrer();
+        TABLERO.mat.recorrer();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Reportar_Usuarios();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /*
      * @param args the commandline arguments
@@ -190,9 +203,48 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
+
+    private void Reportar_Usuarios() {
+        GraphViz gv = new GraphViz();
+        gv.addln(gv.start_graph());
+        //jalar los usuarios
+        gv.addln(pullusr());
+        gv.addln(gv.end_graph());
+        System.out.println(gv.getDotSource());
+
+        String type = "gif";
+        File out = new File("src\\Reportes\\SalidaUsuario." + type);    // Windows
+        gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), type), out);
+    }
+
+    private String pullusr() {
+        String rtn = "";
+        NodoUsuarios nodoUS = new NodoUsuarios();
+        nodoUS = (NodoUsuarios) TABLERO.usuarios.primero;
+        while (nodoUS != null) {
+            rtn += nodoUS.Nombre + ";\n";
+            Nodo nodito = new Nodo();
+            nodito = nodoUS.OtrosCampos.primero;
+            if (nodito != null) {
+                rtn += nodoUS.Nombre + "->" + nodito.Nombre + ";\n";
+                while (nodito.siguiente != null) {
+                    rtn += nodito.Nombre + "->" + nodito.siguiente.Nombre + ";\n";
+                    nodito=nodito.siguiente;
+                }
+            }
+            nodoUS = (NodoUsuarios) nodoUS.siguiente;
+        }
+        nodoUS = (NodoUsuarios) TABLERO.usuarios.primero;
+        while (nodoUS.siguiente != null) {
+            rtn += nodoUS.Nombre + " -> " + nodoUS.siguiente.Nombre + ";\n";
+            nodoUS = (NodoUsuarios) nodoUS.siguiente;
+        }
+        return rtn;
+    }
 }

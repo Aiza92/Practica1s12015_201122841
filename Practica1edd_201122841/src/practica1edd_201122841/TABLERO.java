@@ -5,21 +5,30 @@
  */
 package practica1edd_201122841;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Any
  */
 public class TABLERO extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TABLERO
-     */
+   
     static ListaNodo usuarios = new ListaNodo();
+    static ListaNodo cola = new ListaNodo();
+    static ListaNodo pila = new ListaNodo();
     static Matriz mat = new Matriz();
+    public int X = 400;
+    public int Y = 400;
+    JLabel[][] Mjuego;
+    JLabel[][] CPl;
+    JLabel[][] PZB;
 
     public TABLERO() {
 
         initComponents();
+
+      
     }
 
     /**
@@ -32,14 +41,38 @@ public class TABLERO extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        FondoTablero = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        Pl = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 60, 50));
+        getContentPane().add(FondoTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 670, 430));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tablero.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1030, 670));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/barra.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, 80, 440));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/barra.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 80, 440));
+        getContentPane().add(Pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 70, 440));
+
+        jLabel4.setText("Nombre Jugador1");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        jLabel5.setText("Nombre Jugador 2");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, -1, -1));
+
+        jLabel6.setText("Nombre");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 90, -1));
+
+        jLabel7.setText("Nombre");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 70, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,7 +113,14 @@ public class TABLERO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel FondoTablero;
+    private javax.swing.JPanel Pl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

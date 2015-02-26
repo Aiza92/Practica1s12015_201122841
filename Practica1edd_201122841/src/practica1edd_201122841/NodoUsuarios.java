@@ -11,7 +11,7 @@ package practica1edd_201122841;
  */
 public class NodoUsuarios extends Nodo{
     int Cantidad;
-    ListaNodo OtrosCampos;
+    ListaNodo OtrosCampos=new ListaNodo();
     
     public NodoUsuarios(){
      
