@@ -159,6 +159,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Reportar_Usuarios();
+        Reportar_Pilas();
+        Reportar_Colas();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /*
@@ -235,7 +237,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
                 rtn += nodoUS.Nombre + "->" + nodito.Nombre + ";\n";
                 while (nodito.siguiente != null) {
                     rtn += nodito.Nombre + "->" + nodito.siguiente.Nombre + ";\n";
-                    nodito=nodito.siguiente;
+                    nodito = nodito.siguiente;
                 }
             }
             nodoUS = (NodoUsuarios) nodoUS.siguiente;
@@ -246,5 +248,72 @@ public class PRINCIPAL extends javax.swing.JFrame {
             nodoUS = (NodoUsuarios) nodoUS.siguiente;
         }
         return rtn;
+    }
+
+    private void Reportar_Pilas() {
+        GraphViz gv = new GraphViz();
+        gv.addln(gv.start_graph());
+        //jalar las pilas
+        gv.addln(pullpil());
+        gv.addln(gv.end_graph());
+        System.out.println(gv.getDotSource());
+
+        String type = "gif";
+        File out = new File("src\\Reportes\\SalidaPilas." + type);    // Windows
+        gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), type), out);
+    }
+
+    private String pullpil() {
+        String rtn = "";
+        Nodo nodoPI = new Nodo();
+        nodoPI = (Nodo) TABLERO.pila.primero;
+        while (nodoPI != null) {
+            rtn += nodoPI.Nombre + ";\n";
+        }
+
+        nodoPI = (Nodo) nodoPI.siguiente;
+
+        nodoPI = (Nodo) TABLERO.pila.primero;
+        while (nodoPI.siguiente != null) {
+            rtn += nodoPI.Nombre + " -> " + nodoPI.siguiente.Nombre + ";\n";
+            nodoPI = (Nodo) nodoPI.siguiente;
+        }
+        return rtn;
+    }
+
+    private void Reportar_Colas() {
+        GraphViz gv = new GraphViz();
+        gv.addln(gv.start_graph());
+        //jalar las pilas
+        gv.addln(pullCol());
+        gv.addln(gv.end_graph());
+        System.out.println(gv.getDotSource());
+
+        String type = "gif";
+        File out = new File("src\\Reportes\\SalidaColas." + type);    // Windows
+        gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), type), out);
+
+    }
+
+    private String pullCol() {
+       String rtn = "";
+        Nodo nodoCo = new Nodo();
+        nodoCo = (Nodo) TABLERO.pila.primero;
+        while (nodoCo != null) {
+            rtn += nodoCo.Nombre + ";\n";
+        }
+
+        nodoCo = (Nodo) nodoCo.siguiente;
+
+        nodoCo = (Nodo) TABLERO.pila.primero;
+        while (nodoCo.siguiente != null) {
+            rtn += nodoCo.Nombre + " -> " + nodoCo.siguiente.Nombre + ";\n";
+            nodoCo = (Nodo) nodoCo.siguiente;
+        }
+        return rtn;
+    }
+        
+        
+    
     }
 }
