@@ -15,7 +15,7 @@ public class ZOMBIES extends javax.swing.JFrame {
      * Creates new form ZOMBIES
      */
 //static  ListaNodo usuario = new ListaNodo();
-
+public static String usuzombie;
     public ZOMBIES() {
         initComponents();
     }
@@ -108,6 +108,7 @@ public class ZOMBIES extends javax.swing.JFrame {
 
             System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
         }
+        usuzombie=NombreZombie.getText();
          AceptarZombies.setEnabled(false);
         jButton1.setEnabled(true);
 //        PRINCIPAL.Zombie=true;

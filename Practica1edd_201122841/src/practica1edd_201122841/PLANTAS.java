@@ -15,6 +15,7 @@ public class PLANTAS extends javax.swing.JFrame {
      * Creates new form PLANTAS
      */
     // ListaNodo usuario = new ListaNodo();
+    public static String usuplantas;
     public PLANTAS() {
         initComponents();
     }
@@ -120,6 +121,7 @@ public class PLANTAS extends javax.swing.JFrame {
             
             System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");
         }
+        usuplantas=NombrePlanta.getText();
         jButton1.setEnabled(false);
         otroplanta.setEnabled(true);
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -176,9 +176,9 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
 
         CATALOGO_ZOMBIES catalogo = new CATALOGO_ZOMBIES();
 
-        pila.addInicio(new Nodo(Label3.getText(), Nombre3.getText(), true, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
+        TABLERO.pila.addInicio(new Nodo(Label3.getText(), Nombre3.getText(), true, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
         System.out.println("Mostrando datos3");
-        pila.Mostrar();
+        TABLERO.pila.Mostrar();
 
     }//GEN-LAST:event_AceptarCatalogo3ActionPerformed
 
@@ -192,9 +192,9 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
         tipo=false;
         }
         
-        pila.addInicio(new Nodo(Label1.getText(), Nombre1.getText(), tipo, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
+        TABLERO.pila.addInicio(new Nodo(Label1.getText(), Nombre1.getText(), tipo, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
         System.out.println("Mostrando datos1");
-        pila.Mostrar();
+        TABLERO.pila.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo1ActionPerformed
 
     private void AceptarCatalogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo2ActionPerformed
@@ -206,9 +206,9 @@ public class CATALOGO_ZOMBIES extends javax.swing.JFrame {
         }else{
         tipo=false;
         }
-        pila.addInicio(new Nodo(Label2.getText(), Nombre2.getText(), tipo, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
+       TABLERO.pila.addInicio(new Nodo(Label2.getText(), Nombre2.getText(), tipo, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
         System.out.println("Mostrando datos2");
-        pila.Mostrar();
+        TABLERO.pila.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo2ActionPerformed
 
     private void ListoZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoZActionPerformed

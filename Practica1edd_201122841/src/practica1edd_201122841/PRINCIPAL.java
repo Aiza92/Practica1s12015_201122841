@@ -217,6 +217,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         gv.addln(gv.start_graph());
         //jalar los usuarios
         gv.addln(pullusr());
+       // gv.addln(pullusr1());
         gv.addln(gv.end_graph());
         System.out.println(gv.getDotSource());
 
@@ -229,27 +230,54 @@ public class PRINCIPAL extends javax.swing.JFrame {
         String rtn = "";
         NodoUsuarios nodoUS = new NodoUsuarios();
         nodoUS = (NodoUsuarios) TABLERO.usuarios.primero;
+        Nodo nodito = new Nodo();
+            
         while (nodoUS != null) {
-            rtn += nodoUS.Nombre + ";\n";
-            Nodo nodito = new Nodo();
+         //   rtn += nodoUS.Nombre + ";\n";
+            if(nodoUS.siguiente!=null){
+               rtn += nodoUS.Nombre + "->" + nodoUS.siguiente.Nombre + ";\n";}
             nodito = nodoUS.OtrosCampos.primero;
             if (nodito != null) {
-                rtn += nodoUS.Nombre + "->" + nodito.Nombre + ";\n";
                 while (nodito.siguiente != null) {
+                    if(nodito==nodoUS.OtrosCampos.primero){
+                    rtn+= nodoUS.Nombre+"->"+nodito.Nombre+ ";\n";
+                    }
+                    
                     rtn += nodito.Nombre + "->" + nodito.siguiente.Nombre + ";\n";
                     nodito = nodito.siguiente;
                 }
             }
             nodoUS = (NodoUsuarios) nodoUS.siguiente;
         }
-        nodoUS = (NodoUsuarios) TABLERO.usuarios.primero;
-        while (nodoUS.siguiente != null) {
-            rtn += nodoUS.Nombre + " -> " + nodoUS.siguiente.Nombre + ";\n";
+//        nodoUS = (NodoUsuarios) TABLERO.usuarios.primero;
+//        while (nodoUS.siguiente != null) {
+//            rtn += nodoUS.Nombre + " -> " + nodoUS.siguiente.Nombre + ";\n";
+//            nodoUS = (NodoUsuarios) nodoUS.siguiente;
+//        }
+        return rtn;
+    }
+
+    private String pullusr1() {
+        String rtn = "";
+        NodoUsuarios nodoUS = new NodoUsuarios();
+        nodoUS = (NodoUsuarios)TABLERO.usuarios.primero;
+        while (nodoUS != null) {
+            if(nodoUS.siguiente==null){break;}
+           // rtn += nodoUS.Nombre + ";\n";
+            Nodo nodito = new Nodo();
+            nodito = nodoUS.OtrosCampos.primero;
+            while (nodito != null) {
+                if(nodito==nodoUS.OtrosCampos.primero){rtn+=nodoUS.Nombre+"->";}
+                if(nodito.siguiente==null){break;}
+                    rtn += nodito.Nombre + "->" + nodito.siguiente.Nombre + ";\n";
+                    nodito = nodito.siguiente;
+                }
+            
             nodoUS = (NodoUsuarios) nodoUS.siguiente;
         }
         return rtn;
     }
-
+    
     private void Reportar_Pilas() {
         GraphViz gv = new GraphViz();
         gv.addln(gv.start_graph());
@@ -265,20 +293,27 @@ public class PRINCIPAL extends javax.swing.JFrame {
 
     private String pullpil() {
         String rtn = "";
-        Nodo nodoPI = new Nodo();
-        nodoPI = (Nodo) TABLERO.pila.primero;
-        while (nodoPI != null) {
-            rtn += nodoPI.Nombre + ";\n";
+        Nodo aux;
+        aux = TABLERO.pila.primero;
+        while (aux != null) {
+            if(aux.siguiente==null){
+                break;
+            }
+            rtn += aux.Imagen + " -> " + aux.siguiente.Imagen + ";\n";
+            aux = aux.siguiente;
         }
 
-        nodoPI = (Nodo) nodoPI.siguiente;
-
-        nodoPI = (Nodo) TABLERO.pila.primero;
-        while (nodoPI.siguiente != null) {
-            rtn += nodoPI.Nombre + " -> " + nodoPI.siguiente.Nombre + ";\n";
-            nodoPI = (Nodo) nodoPI.siguiente;
-        }
         return rtn;
+    }
+    
+    public void Mostrar() {
+        Nodo aux;
+        aux = TABLERO.pila.primero;
+        while (aux != null) {
+            System.out.println(aux.Nombre);
+            aux = aux.siguiente;
+        }
+
     }
 
     private void Reportar_Colas() {
@@ -296,24 +331,17 @@ public class PRINCIPAL extends javax.swing.JFrame {
     }
 
     private String pullCol() {
-       String rtn = "";
-        Nodo nodoCo = new Nodo();
-        nodoCo = (Nodo) TABLERO.pila.primero;
-        while (nodoCo != null) {
-            rtn += nodoCo.Nombre + ";\n";
+          String rtn = "";
+        Nodo aux;
+        aux = TABLERO.cola.primero;
+        while (aux != null) {
+            if(aux.siguiente==null){
+                break;
+            }
+            rtn += aux.Imagen + " -> " + aux.siguiente.Imagen + ";\n";
+            aux = aux.siguiente;
         }
 
-        nodoCo = (Nodo) nodoCo.siguiente;
-
-        nodoCo = (Nodo) TABLERO.pila.primero;
-        while (nodoCo.siguiente != null) {
-            rtn += nodoCo.Nombre + " -> " + nodoCo.siguiente.Nombre + ";\n";
-            nodoCo = (Nodo) nodoCo.siguiente;
-        }
         return rtn;
-    }
-        
-        
-    
     }
 }

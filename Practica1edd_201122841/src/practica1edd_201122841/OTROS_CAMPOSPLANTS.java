@@ -58,9 +58,10 @@ public class OTROS_CAMPOSPLANTS extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (TABLERO.usuarios.Contador() == 1) {
+        if (TABLERO.usuarios.primero.Nombre.equals(PLANTAS.usuplantas)) {
+     
             ((NodoUsuarios)TABLERO.usuarios.primero).OtrosCampos.addFinal(new OtrosCampos(jTextField1.getText()));
-        } else if (TABLERO.usuarios.Contador() == 2) {
+        } else if (TABLERO.usuarios.primero.siguiente.Nombre.equals(PLANTAS.usuplantas)) {
             ((NodoUsuarios)TABLERO.usuarios.primero.siguiente).OtrosCampos.addFinal(new OtrosCampos(jTextField1.getText()));
         }else{
             System.out.println("Error verifique que no tengas mas usuarios,sino llame al administrador del juego");

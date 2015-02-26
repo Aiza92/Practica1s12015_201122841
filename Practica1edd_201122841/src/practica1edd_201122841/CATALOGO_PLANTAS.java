@@ -15,6 +15,7 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
      * Creates new form CATALOGO_PLANTAS
      */
     ListaNodo cola = new ListaNodo();
+    public static String usuplanta;
       public CATALOGO_PLANTAS() {
         initComponents();
     }
@@ -169,10 +170,10 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
 
         CATALOGO_PLANTAS catalogo = new CATALOGO_PLANTAS();
 
-        cola.addFinal(new Nodo(Label3.getText(), Nombre3.getText(), tipo, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
-
+        TABLERO.cola.addFinal(new Nodo(Label3.getText(), Nombre3.getText(), tipo, Integer.parseInt(Defensa3.getText()), Integer.parseInt(Ataque3.getText())));
+        usuplanta=Nombre3.getText();
         System.out.println("Mostrando datos3");
-        cola.Mostrar();
+        TABLERO.cola.Mostrar();
 
 
     }//GEN-LAST:event_AceptarCatalogoActionPerformed
@@ -187,9 +188,9 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
             tipo = false;
         }
 
-        cola.addFinal(new Nodo(Label1.getText(), Nombre1.getText(), tipo, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
+        TABLERO.cola.addFinal(new Nodo(Label1.getText(), Nombre1.getText(), tipo, Integer.parseInt(Defensa1.getText()), Integer.parseInt(Ataque1.getText())));
         System.out.println("Mostrando datos1");
-        cola.Mostrar();
+        TABLERO.cola.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo1ActionPerformed
 
     private void AceptarCatalogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCatalogo2ActionPerformed
@@ -202,9 +203,9 @@ public class CATALOGO_PLANTAS extends javax.swing.JFrame {
             tipo = false;
         }
 
-        cola.addFinal(new Nodo(Label2.getText(), Nombre2.getText(), tipo, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
-        System.out.println("Mostrando datos2");
-        cola.Mostrar();
+        TABLERO.cola.addFinal(new Nodo(Label2.getText(), Nombre2.getText(), tipo, Integer.parseInt(Defensa2.getText()), Integer.parseInt(Ataque2.getText())));
+        System.out.println("Mostrando datos2" );
+        TABLERO.cola.Mostrar();
     }//GEN-LAST:event_AceptarCatalogo2ActionPerformed
 
     private void ListoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoPActionPerformed
